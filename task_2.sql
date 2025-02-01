@@ -2,21 +2,15 @@
 USE alx_book_store;
 
 
-CREATE TABLE authors (
-    author_id INT AUTO_INCREMENT PRIMARY KEY,
-    author_name VARCHAR(255) NOT NULL
-);
-
-
 CREATE TABLE books (
     book_id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
-    author_id INT,
+    author_name VARCHAR(255) NOT NULL,  -- Directly storing the author's name in the books table
     price DECIMAL(10, 2) NOT NULL,
     publication_year YEAR,
-    genre VARCHAR(100),
-    FOREIGN KEY (author_id) REFERENCES authors(author_id)
+    genre VARCHAR(100)
 );
+
 
 CREATE TABLE customers (
     customer_id INT AUTO_INCREMENT PRIMARY KEY,
